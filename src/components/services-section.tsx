@@ -28,7 +28,7 @@ export function ServicesSection() {
           variants={staggerContainer}
           className="grid gap-6 lg:grid-cols-2"
         >
-          {services.map((service, i) => (
+          {services.map((service) => (
             <motion.div key={service.id} variants={fadeUp} transition={transition}>
               <LuxuryCard delay={0} className="h-full">
                 <h3 className="font-heading text-2xl text-ivory">{service.title}</h3>
