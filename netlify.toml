@@ -4,8 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # Instalar devDependencies (@types, eslint) — Tailwind/TS ya están en dependencies
+  NPM_CONFIG_PRODUCTION = "false"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[context.production.environment]
-  NODE_ENV = "production"
