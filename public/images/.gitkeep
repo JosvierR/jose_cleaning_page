@@ -1,0 +1,2 @@
+# Add local images here (hero-kitchen.jpg, dining-room.jpg, etc.)
+# Then update src/lib/images.ts to prefer local paths.

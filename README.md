@@ -1,43 +1,83 @@
-# Bronx Restaurant Cleaning Co. — Premium Landing Page
+# Maison Clean NYC
 
-Luxury single-page marketing site for a Bronx/NYC commercial restaurant cleaning service.
+Cinematic luxury landing page for premium restaurant cleaning in Bronx / NYC.
 
-## Stack
-
-- Next.js 16 (App Router) + TypeScript
-- Tailwind CSS v4 + shadcn/ui
-- Framer Motion, GSAP (hero glow), Lenis (smooth scroll)
-- React Hook Form + Zod (walkthrough form)
-- Embla Carousel (before/after), react-countup (metrics)
-
-## Getting started
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Brand
+
+- **Maison Clean NYC** — porcelain, navy, ice-blue editorial aesthetic
+- Rolls-Royce-inspired pacing: full-screen sections, minimal copy, slow motion
+- Not a SaaS dashboard — no fake metrics, testimonials, or certifications
+
+## Stack
+
+Next.js 16 · TypeScript · Tailwind v4 · Framer Motion · GSAP ScrollTrigger · Lenis · SplitType · React Hook Form + Zod
+
+## Customize
+
+| File | Purpose |
+|------|---------|
+| `src/lib/site-data.ts` | Copy, pricing, FAQ, services |
+| `src/lib/images.ts` | Image URLs — swap to `/images/*.jpg` when local files exist |
+| `src/lib/seo.ts` | Metadata |
+| `src/components/quote-form.tsx` | Form submit → API / Formspree / Resend |
+
+## Local images
+
+Place files in `public/images/`:
+
+- `hero-kitchen.jpg`, `dining-room.jpg`, `stainless-detail.jpg`, `restroom-clean.jpg`, `floor-reflection.jpg`, `bakery-counter.jpg`, `before-kitchen.jpg`, `after-kitchen.jpg`
+
+Update `imageSrc()` in `src/lib/images.ts` to return `images[key].local` when files are present.
+
+## Build
 
 ```bash
 npm run build
 npm start
 ```
 
-## Project structure
+## Deploy en Netlify
 
-- `src/app/` — layout, page, global styles, SEO metadata
-- `src/components/` — all landing sections
-- `src/lib/site-data.ts` — copy, services, pricing, FAQ (edit here)
-- `src/lib/form-schema.ts` — Zod validation for quote form
+El proyecto incluye `netlify.toml` y `@netlify/plugin-nextjs` para Next.js 16 (App Router).
 
-## Customization
+### 1. Subir el código a GitHub
 
-1. **Brand & contact** — `src/lib/site-data.ts` (`brand.phone`, `brand.email`)
-2. **Pricing** — `pricingPlans` in `site-data.ts`
-3. **Before/after photos** — replace placeholders in `before-after-section.tsx` with `next/image`
-4. **Form backend** — `contact-form.tsx` `onSubmit` (console.log today; wire to Formspree, Resend, etc.)
+```bash
+git add .
+git commit -m "Maison Clean NYC — listo para Netlify"
+git push origin main
+```
 
-## Sections
+### 2. Crear el sitio en Netlify
 
-Hero, trust bar, problem, services, before/after proof, process, pricing, materials, metrics, industries, local SEO, owner concerns, FAQ, contact form, footer — plus sticky mobile CTA and floating phone button.
+1. Entra en [https://app.netlify.com](https://app.netlify.com)
+2. **Add new site** → **Import an existing project**
+3. Elige **GitHub** y el repo `JosvierR/jose_cleaning_page`
+4. Netlify leerá `netlify.toml` automáticamente:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `.next` (el plugin se encarga del runtime)
+   - **Node:** 20
+5. Clic en **Deploy site**
+
+No uses “drag & drop” de la carpeta: Next.js necesita el build en los servidores de Netlify.
+
+### 3. Comprobar el deploy
+
+- El build debe terminar en verde (2–4 min la primera vez).
+- Abre la URL `https://tu-sitio.netlify.app`
+- Si falla, revisa **Deploy log** → suele ser Node &lt; 20 o dependencias sin instalar.
+
+### 4. Dominio propio (opcional)
+
+**Domain settings** → **Add custom domain** → sigue los pasos DNS de Netlify.
+
+### Variables de entorno
+
+Este sitio no requiere `.env` para funcionar. Cuando conectes el formulario (Formspree, Resend, etc.), añade las claves en **Site settings → Environment variables**.

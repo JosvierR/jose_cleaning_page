@@ -1,43 +1,55 @@
-import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { TrustBar } from "@/components/trust-bar";
-import { ProblemSection } from "@/components/problem-section";
-import { ServicesSection } from "@/components/services-section";
-import { BeforeAfterSection } from "@/components/before-after-section";
-import { ProcessSection } from "@/components/process-section";
-import { PricingSection } from "@/components/pricing-section";
-import { MaterialsSection } from "@/components/materials-section";
-import { MetricsSection } from "@/components/metrics-section";
-import { IndustriesSection } from "@/components/industries-section";
-import { LocalSeoSection } from "@/components/local-seo-section";
-import { OwnerConcernsSection } from "@/components/owner-concerns-section";
-import { FaqSection } from "@/components/faq-section";
-import { ContactForm } from "@/components/contact-form";
-import { Footer } from "@/components/footer";
-import { StickyMobileCta } from "@/components/sticky-cta";
+"use client";
+
+import { useState, useCallback } from "react";
+import { Preloader } from "@/components/preloader";
+import { SiteHeader } from "@/components/site-header";
+import { CinematicHero } from "@/components/cinematic-hero";
+import { EditorialIntro } from "@/components/editorial-intro";
+import { SignatureSystem } from "@/components/signature-system";
+import { ServicesCinematic } from "@/components/services-cinematic";
+import { BeforeAfterGallery } from "@/components/before-after-gallery";
+import { ProcessScrollStory } from "@/components/process-scroll-story";
+import { PricingEditorial } from "@/components/pricing-editorial";
+import { MaterialsLab } from "@/components/materials-lab";
+import { ProofOfWork } from "@/components/proof-of-work";
+import { LocalPresence } from "@/components/local-presence";
+import { FaqLuxury } from "@/components/faq-luxury";
+import { QuoteForm } from "@/components/quote-form";
+import { SiteFooter } from "@/components/site-footer";
+import { MobileStickyCta } from "@/components/mobile-sticky-cta";
 
 export default function Home() {
+  const [ready, setReady] = useState(false);
+  const handleReady = useCallback(() => setReady(true), []);
+
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <TrustBar />
-        <ProblemSection />
-        <ServicesSection />
-        <BeforeAfterSection />
-        <ProcessSection />
-        <PricingSection />
-        <MaterialsSection />
-        <MetricsSection />
-        <IndustriesSection />
-        <LocalSeoSection />
-        <OwnerConcernsSection />
-        <FaqSection />
-        <ContactForm />
-      </main>
-      <Footer />
-      <StickyMobileCta />
+      <Preloader onComplete={handleReady} />
+      <div
+        className="transition-opacity duration-[800ms] ease-out"
+        style={{
+          opacity: ready ? 1 : 0,
+          pointerEvents: ready ? "auto" : "none",
+        }}
+      >
+        <SiteHeader />
+        <main className="relative">
+          <CinematicHero />
+          <EditorialIntro />
+          <SignatureSystem />
+          <ServicesCinematic />
+          <BeforeAfterGallery />
+          <ProcessScrollStory />
+          <PricingEditorial />
+          <MaterialsLab />
+          <ProofOfWork />
+          <LocalPresence />
+          <FaqLuxury />
+          <QuoteForm />
+        </main>
+        <SiteFooter />
+        <MobileStickyCta />
+      </div>
     </>
   );
 }

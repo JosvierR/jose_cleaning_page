@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { areaOptions, businessTypes, cleaningFrequencies } from "./site-data";
 
-export const walkthroughFormSchema = z.object({
-  name: z.string().min(2, "Please enter your name"),
+export const quoteFormSchema = z.object({
+  name: z.string().min(2, "Please enter your full name"),
   businessName: z.string().min(2, "Please enter your business name"),
   phone: z
     .string()
@@ -17,11 +17,11 @@ export const walkthroughFormSchema = z.object({
   frequency: z.enum(cleaningFrequencies, {
     message: "Please select a frequency",
   }),
-  bestTime: z.string().min(2, "Please tell us your preferred cleaning time"),
+  cleaningWindow: z.string().min(2, "Please share your preferred cleaning window"),
   areas: z
     .array(z.enum(areaOptions))
-    .min(1, "Select at least one area to clean"),
+    .min(1, "Select at least one area"),
   message: z.string().optional(),
 });
 
-export type WalkthroughFormValues = z.infer<typeof walkthroughFormSchema>;
+export type QuoteFormValues = z.infer<typeof quoteFormSchema>;

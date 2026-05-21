@@ -1,9 +1,14 @@
-import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
-import { LenisProvider } from "@/components/providers/lenis-provider";
-import { SpotlightProvider } from "@/components/providers/spotlight-provider";
-import { seo } from "@/lib/site-data";
+import { Cormorant_Garamond, Geist, Inter } from "next/font/google";
+import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
+import { CursorGlow } from "@/components/motion/cursor-glow";
+import { metadata } from "@/lib/seo";
 import "./globals.css";
+
+const geist = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -11,32 +16,14 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: seo.title,
-  description: seo.description,
-  keywords: [...seo.keywords],
-  openGraph: {
-    title: seo.ogTitle,
-    description: seo.ogDescription,
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: seo.ogTitle,
-    description: seo.ogDescription,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export { metadata };
 
 export default function RootLayout({
   children,
@@ -44,14 +31,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${playfair.variable} min-h-screen bg-[#050505] font-sans text-ivory antialiased`}
+        className={`${geist.variable} ${inter.variable} ${cormorant.variable} min-h-screen bg-porcelain font-sans text-navy antialiased`}
       >
-        <LenisProvider>
-          <SpotlightProvider />
+        <SmoothScrollProvider>
+          <CursorGlow />
           {children}
-        </LenisProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
