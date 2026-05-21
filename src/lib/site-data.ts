@@ -1,9 +1,9 @@
 export const brand = {
-  name: "Bronx Restaurant Cleaning Co.",
-  shortName: "Bronx Restaurant Cleaning",
-  tagline: "Bronx / NYC • Food-Service Cleaning",
+  name: "Maison Clean NYC",
+  shortName: "Maison Clean NYC",
+  tagline: "Food-Safe Cleaning for Serious Restaurant Operators.",
   phone: "(718) 000-0000",
-  email: "walkthrough@bronxrestaurantcleaning.com",
+  email: "walkthrough@maisoncleannyc.com",
   location: "Bronx, NY — Serving NYC Food-Service Operators",
 } as const;
 
@@ -11,9 +11,10 @@ export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Proof", href: "#proof" },
+  { label: "The Standard", href: "#standard" },
+  { label: "Materials", href: "#materials" },
   { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Request Walkthrough", href: "#contact" },
 ] as const;
 
 export const trustChips = [
@@ -168,7 +169,7 @@ export const beforeAfterItems = [
   },
   {
     id: "restroom",
-    title: "Restroom refresh",
+    title: "Restroom reset",
     beforeLabel: "Before",
     afterLabel: "After",
     note: "Replace with real before/after photos after first service week.",
@@ -418,18 +419,18 @@ export const legalDisclaimer =
   "Standard recurring cleaning does not include hood exhaust systems, fire suppression systems, grease trap pumping, pest control, plumbing, electrical, or equipment repair. Specialized services must be handled by properly qualified vendors where required.";
 
 export const seo = {
-  title: "Restaurant Cleaning Bronx NYC | Food-Safe Commercial Kitchen Cleaning",
+  title: "Restaurant Cleaning Bronx NYC | Maison Clean NYC",
   description:
-    "Premium recurring restaurant cleaning in Bronx and NYC for bakeries, cafés, bars, and commercial kitchens. Food-service appropriate materials, after-hours service, checklist-based cleaning, and photo proof.",
+    "Premium recurring restaurant cleaning in Bronx and NYC for bakeries, cafés, bars, and commercial kitchens. Food-service appropriate materials, after-hours service, photo-verified checklists, and clear pricing.",
   keywords: [
     "restaurant cleaning Bronx",
-    "commercial kitchen cleaning NYC",
+    "restaurant cleaning NYC",
     "bakery cleaning Bronx",
     "food-safe cleaning NYC",
-    "restaurant cleaners Bronx",
+    "commercial cleaning Bronx",
     "after-hours restaurant cleaning",
   ],
-  ogTitle: "Bronx Restaurant Cleaning Co. | Premium Food-Service Cleaning NYC",
+  ogTitle: "Maison Clean NYC | Premium Food-Service Cleaning NYC",
   ogDescription:
-    "Recurring restaurant cleaning for Bronx & NYC operators. Food-service appropriate materials, after-hours crews, checklist-based service, and photo proof.",
+    "Recurring restaurant cleaning for Bronx & NYC operators. Food-service appropriate materials, after-hours crews, photo-verified checklists, and clear pricing.",
 } as const;

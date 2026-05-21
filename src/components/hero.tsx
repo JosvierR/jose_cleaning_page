@@ -107,10 +107,10 @@ export function Hero() {
             className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <a href="#contact" className="btn-primary-luxury">
-              Get a Free Walkthrough
+              Request a Walkthrough
             </a>
             <Link href="#services" className="btn-secondary-luxury">
-              View Cleaning Scope
+              View the Standard
             </Link>
           </motion.div>
 
@@ -119,7 +119,7 @@ export function Hero() {
             transition={transition}
             className="mt-4 text-xs text-muted-text"
           >
-            Response within 24 hours • No obligation walkthrough
+            After-hours available • Bronx / NYC routes
           </motion.p>
         </motion.div>
 
@@ -133,14 +133,14 @@ export function Hero() {
             <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
               <div>
                 <p className="text-xs uppercase tracking-widest text-champagne">
-                  Operator Dashboard
+                  Service Plaque
                 </p>
                 <p className="font-heading mt-1 text-lg text-ivory">
-                  Tonight&apos;s Service Scope
+                  Guest-Ready Visit Standard
                 </p>
               </div>
               <span className="rounded-full bg-success/10 px-3 py-1 text-xs font-medium text-success">
-                On Route
+                Scheduled
               </span>
             </div>
 
@@ -185,10 +185,10 @@ export function Hero() {
             className="absolute -bottom-4 -left-2 max-w-[220px] rounded-2xl border border-champagne/30 bg-[#111]/95 p-4 shadow-xl backdrop-blur-md sm:-left-6 lg:-left-10"
           >
             <p className="text-xs uppercase tracking-widest text-champagne">
-              Inspection-ready
+              Quiet precision
             </p>
             <p className="mt-1 font-heading text-sm leading-snug text-ivory">
-              Recurring routine built for health inspections & guest standards
+              Precision cleaning. Quiet execution. Visible proof.
             </p>
           </motion.div>
         </motion.div>
